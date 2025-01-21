@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# author: fyxme
 
 from havoc import Demon, RegisterCommand
 
@@ -14,5 +15,5 @@ def enumpwsh( demonID, *param ):
 
     return TaskID
 
-RegisterCommand( enumpwsh, "", "enumpwshhist", "Enumerate pwsh history", 0, "", "" )
+RegisterCommand( enumpwsh, "", "enumpwshhist", "Enumerate PowerShell history files and return sensitive information found", 0, "", "" )
 

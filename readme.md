@@ -10,6 +10,11 @@ The behaviour is the same as the [Powershell History netexec SMB Module](https:/
 enumpwshhist
 ```
 
+## Supported C2s
+
+- CobaltStrike : load `enumpwshhist.cna`
+- Havoc : load `havoc-enumpwshhist.py`
+
 ## Compilation
 
 The makefile is setup for cross platform compilation using mingw:
@@ -17,3 +22,4 @@ The makefile is setup for cross platform compilation using mingw:
 ```
 make
 ```
+
