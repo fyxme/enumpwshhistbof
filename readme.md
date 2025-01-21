@@ -4,6 +4,8 @@
 
 The behaviour is the same as the [Powershell History netexec SMB Module](https://github.com/Pennyw0rth/NetExec/blob/main/nxc/modules/powershell_history.py) except you can now run it from your favorite C2 or BOF runner.
 
+> **enumpwshhist:** **enum**ERATE **p**O**w**ER**sh**ELL **hist**ORY
+
 ## Usage
 
 ```
