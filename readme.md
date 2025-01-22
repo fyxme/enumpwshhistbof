@@ -25,16 +25,12 @@ enumpwshhist
 Evaluating directory: C:\Users\lo\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine
 	File found: ConsoleHost_history.txt
 	Full path: C:\Users\lo\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
-	[convertto-securestring]: $creds = convertto-securestring 'helloworld123' -asplaintext -force
-
-	[credential]: $uo = new-object system.manageement.automation.pscredential ('micael.jackson', $creds)
-
-	[credential]: $uo = new-object system.manageement.automation.pscredential ('michael.jackson', $creds)
-
-	[credential]: $uo = new-object system.management.automation.pscredential ('michael.jackson', $creds)
-
-	[convertto-securestring]: $creds = convertto-securestring 'h123elloworld123' -asplaintext -force
-
+	Sensitive keywords found:
+		[convertto-securestring] $creds = convertto-securestring 'helloworld123' -asplaintext -force
+		[credential] $uo = new-object system.manageement.automation.pscredential ('micael.jackson', $creds)
+		[credential] $uo = new-object system.manageement.automation.pscredential ('michael.jackson', $creds)
+		[credential] $uo = new-object system.management.automation.pscredential ('michael.jackson', $creds)
+		[convertto-securestring] $creds = convertto-securestring 'h123elloworld123' -asplaintext -force
 
 [+] Received Output [42 bytes]:
 [+] Finished powershell file enumeration!

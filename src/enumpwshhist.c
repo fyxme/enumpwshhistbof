@@ -127,8 +127,9 @@ int fileContainsSensitiveKeywords(const char *filePath) {
 
         for (int i = 0; i < sensitiveKeywordCount; i++) {
             if (MSVCRT$strstr(line, sensitiveKeywords[i]) != NULL) {
+                if (!sensitiveKeywordFound) internal_printf("\tSensitive keywords found:\n");
                 //internal_printf("\tSensitive keyword (%s) found in file: %s\n", sensitiveKeywords[i]);
-                internal_printf("\t[%s]: %s\n", sensitiveKeywords[i], line);
+                internal_printf("\t\t[%s] %s", sensitiveKeywords[i], line);
                 sensitiveKeywordFound = 1;
                 continue;
             }
