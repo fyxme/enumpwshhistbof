@@ -127,8 +127,8 @@ int fileContainsSensitiveKeywords(const char *filePath) {
 
         for (int i = 0; i < sensitiveKeywordCount; i++) {
             if (MSVCRT$strstr(line, sensitiveKeywords[i]) != NULL) {
-                internal_printf("Sensitive keyword(s) (%s) found in file: %s\n", sensitiveKeywords[i], filePath);
-                internal_printf("Line: %s\n", line);
+                //internal_printf("\tSensitive keyword (%s) found in file: %s\n", sensitiveKeywords[i]);
+                internal_printf("\t[%s]: %s\n", sensitiveKeywords[i], line);
                 sensitiveKeywordFound = 1;
                 continue;
             }
@@ -169,6 +169,8 @@ void listAndCheckFiles(const char *directory) {
 	    internal_printf("\tFile found: %s\n", findData.cFileName);
 	
             constructPath(filePath, MAX_PATH, "%s\\%s", directory, findData.cFileName);
+	    internal_printf("\tFull path: %s\n", filePath);
+
             fileContainsSensitiveKeywords(filePath);
         
     } while (KERNEL32$FindNextFileA(hFind, &findData) != 0);
