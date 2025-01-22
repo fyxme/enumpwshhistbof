@@ -118,6 +118,8 @@ int fileContainsSensitiveKeywords(const char *filePath) {
         return 0; // Could not open file
     }
 
+    int sensitiveKeywordFound = 0;
+
     char line[1024];
     while (MSVCRT$fgets(line, sizeof(line), file)) {
 	    // convert line to lowercase
@@ -125,16 +127,16 @@ int fileContainsSensitiveKeywords(const char *filePath) {
 
         for (int i = 0; i < sensitiveKeywordCount; i++) {
             if (MSVCRT$strstr(line, sensitiveKeywords[i]) != NULL) {
-                internal_printf("Sensitive keyword (%s) found in file: %s\n", sensitiveKeywords[i], filePath);
+                internal_printf("Sensitive keyword(s) (%s) found in file: %s\n", sensitiveKeywords[i], filePath);
                 internal_printf("Line: %s\n", line);
-                MSVCRT$fclose(file);
-                return 1; // Found a sensitive keyword
+                sensitiveKeywordFound = 1;
+                continue;
             }
         }
     }
 
     MSVCRT$fclose(file);
-    return 0; // No sensitive keywords found
+    return sensitiveKeywordFound;
 }
 
 // List files in a directory and check for sensitive keywords
