@@ -53,4 +53,5 @@ make
 
 ## Credits
 
-wsummerhill's [enumfiles](https://github.com/wsummerhill/BOF-enumfiles) BOF which has a powershell history module which lists powershell history files. However, only works for the current user only and requires the `APPDATA` environment variable to be set which is not always the case.
+- [netexec's powershell history module](https://github.com/Pennyw0rth/NetExec/blob/main/nxc/modules/powershell_history.py), which this BOF is based on
+- wsummerhill's [enumfiles](https://github.com/wsummerhill/BOF-enumfiles) BOF which has a powershell history module which lists powershell history files. However, only works for the current user only and requires the `APPDATA` environment variable to be set which is not always the case.
